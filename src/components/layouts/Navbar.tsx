@@ -8,56 +8,45 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "../ui/fragments/navigation-menu";
-import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
+import { useState } from "react";
 
 const Navbar = () => {
-  const location = useLocation();
-
+  const [menu, setMenu] = useState("home");
   return (
     <nav className="flex justify-between items-center py-5 px-11">
       <div>
         <img className="w-5/12 h-xs" src={logo} alt="logo" />
       </div>
       <NavigationMenu>
-        <NavigationMenuList>
+        <NavigationMenuList className="gap-5 font-bold">
           <NavigationMenuItem
+            onClick={() => setMenu("home")}
             className={classNames(
-              location.pathname === "/" &&
+              menu === "home" &&
                 "border-b-4 border-orange-500 transition-all duration-200"
             )}
           >
-            <Link to="/">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                {strings.HOME}
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink> {strings.HOME}</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem
+            onClick={() => setMenu("menu")}
             className={classNames(
-              location.pathname === "/menu" &&
+              menu === "menu" &&
                 "border-b-4 border-orange-500 transition-all duration-200"
             )}
           >
-            <Link to="/menu">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                {strings.MENU}
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink> {strings.MENU} </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem
+            onClick={() => setMenu("contact-us")}
             className={classNames(
-              location.pathname === "/contact-us" &&
+              menu === "contact-us" &&
                 "border-b-4 border-orange-500 transition-all duration-200"
             )}
           >
-            <Link to="/contact-us">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                {strings.CONTACT_US}
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink> {strings.CONTACT_US} </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

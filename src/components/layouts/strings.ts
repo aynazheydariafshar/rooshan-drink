@@ -1,4 +1,5 @@
 export const strings = {
-  HOME: "خانه",
-  MENU : "منو",
+  HOME: "home",
+  MENU: "menu",
+  CONTACT_US: "contact us",
 };

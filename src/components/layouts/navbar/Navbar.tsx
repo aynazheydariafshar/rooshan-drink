@@ -11,9 +11,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState<MenuItemType>(MenuItemType.HOME);
   return (
     <nav className="flex justify-between items-center py-5 px-11">
-      <div>
-        <img className="w-5/12 h-xs" src={logo} alt="logo" />
-      </div>
+      <img className="w-44 h-xs" src={logo} alt="logo" />
       <ul className="flex items-center gap-7 font-bold text-lg">
         <MenuItem
           title={strings.HOME}

@@ -1,41 +1,30 @@
 import { strings } from "../strings";
-import searchIcon from "../../../assets/icons/search.svg";
-import basketIcon from "../../../assets/icons/shopping-bag.svg";
-import { Button } from "../../ui/elements/Button";
-import { useState } from "react";
-import { MenuItemType } from "./types";
-import MenuItem from "./MenuItem";
 import logo from "../../../assets/images/logo.png";
+import { Coffee, House, Store } from "@/components/icons";
+import { RoutesName } from "@/pages/routes";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState<MenuItemType>(MenuItemType.HOME);
+  const navigate = useNavigate();
   return (
     <nav className="flex justify-between items-center py-5 px-11">
-      <img className="w-44 h-xs" src={logo} alt="logo" />
-      <ul className="flex items-center gap-7 font-bold text-lg">
-        <MenuItem
-          title={strings.HOME}
-          val={MenuItemType.HOME}
-          menu={menu}
-          setMenu={setMenu}
-        />
-        <MenuItem
-          title={strings.MENU}
-          val={MenuItemType.MENU}
-          menu={menu}
-          setMenu={setMenu}
-        />
-        <MenuItem
-          title={strings.CONTACT_US}
-          val={MenuItemType.CONTACT_US}
-          menu={menu}
-          setMenu={setMenu}
-        />
-      </ul>
-      <div className="flex items-center gap-8">
-        <img src={searchIcon} alt="search" />
-        <img src={basketIcon} alt="basket" />
-        <Button>sign in</Button>
+      <div
+        onClick={() => navigate(RoutesName.Home)}
+        className="flex flex-col items-center hover:cursor-pointer hover:animate-bounce"
+      >
+        <House width={32} height={32} />
+        <p className="text-lg font-bold">{strings.HOME}</p>
+      </div>
+      <div className="flex flex-col items-center gap-1">
+        <Coffee width={44} height={44} color="#F99267" />
+        <img className="w-44 h-xs" src={logo} alt="logo" />
+      </div>
+      <div
+        onClick={() => navigate(RoutesName.Shop)}
+        className="flex flex-col items-center hover:cursor-pointer hover:animate-bounce"
+      >
+        <Store width={32} height={32} />
+        <p className="text-lg font-bold">{strings.SHOP}</p>
       </div>
     </nav>
   );

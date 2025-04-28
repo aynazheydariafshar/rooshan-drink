@@ -1,3 +1,5 @@
+@import "./assets/fonts/style.css";
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -8,8 +10,8 @@
   margin: 0;
 }
 
-body {
-  min-height: 100vh;
+body * {
+  font-family: "Siginika" !important;
 }
 
 a {
@@ -133,12 +135,15 @@ a {
   }
 }
 
-
 @keyframes textScrollToLeft {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-1000%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-1000%);
+  }
 }
 
 .animation-scrollLeft {
-  animation: textScrollToLeft 20s linear infinite;
+  animation: textScrollToLeft 25s linear infinite;
 }

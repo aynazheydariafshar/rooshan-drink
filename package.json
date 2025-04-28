@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:icons": "npx @svgr/cli --typescript --out-dir ./src/components/icons --ignore-existing --no-prettier ./src/assets/icons"
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.10",

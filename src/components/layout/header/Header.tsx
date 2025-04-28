@@ -1,5 +1,5 @@
 import { strings } from "../strings";
-import coffee from "../../../assets/icons/coffee.svg";
+import { Coffee } from "@/components/icons";
 
 function Header() {
   return (
@@ -11,7 +11,7 @@ function Header() {
             className="px-4 animation-scrollLeft flex items-center justify-between gap-6"
           >
             <p>{strings.ENJOY_QUALITY}</p>
-            <img src={coffee} alt="coffee" />
+            <Coffee />
           </div>
         ))}
       </div>

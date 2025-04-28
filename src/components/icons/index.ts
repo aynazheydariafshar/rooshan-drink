@@ -1,0 +1,5 @@
+export { default as Coffee } from './Coffee'
+export { default as House } from './House'
+export { default as Search } from './Search'
+export { default as ShoppingBag } from './ShoppingBag'
+export { default as Store } from './Store'

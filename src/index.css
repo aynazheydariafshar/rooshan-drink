@@ -147,3 +147,12 @@ a {
 .animation-scrollLeft {
   animation: textScrollToLeft 25s linear infinite;
 }
+
+.swiper-container {
+  perspective: 1500px; /* برای ایجاد عمق در فضای سه‌بعدی */
+}
+
+.swiper-slide {
+  transition: transform 0.5s ease;
+  will-change: transform;
+}

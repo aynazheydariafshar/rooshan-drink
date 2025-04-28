@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -130,4 +131,14 @@ a {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+@keyframes textScrollToLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-1000%); }
+}
+
+.animation-scrollLeft {
+  animation: textScrollToLeft 20s linear infinite;
 }

@@ -3,6 +3,7 @@ export default {
   theme: {
     extend: {},
     keyframes: {},
+    animation: {},
   },
   plugins: [],
 };

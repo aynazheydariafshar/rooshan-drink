@@ -7,7 +7,7 @@ import { ButtonIconTxt } from "./ButtonIconTxt";
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center py-5 px-11">
-      <ButtonIconTxt title={strings.HOME} href={RoutesName.Cart} Icon={House} />
+      <ButtonIconTxt title={strings.HOME} href={RoutesName.Home} Icon={House} />
       <div className="flex flex-col items-center gap-1">
         <Coffee width={44} height={44} color="#F99267" />
         <img className="w-44 h-xs" src={logo} alt="logo" />
